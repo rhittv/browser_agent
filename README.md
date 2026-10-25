@@ -18,9 +18,11 @@ npm install -g @modelcontextprotocol/server-puppeteer
 ### 2. Set your API key
 
 Open `.env` and paste your key:
+
 ```
 ANTHROPIC_API_KEY=sk-ant-YOUR_KEY_HERE
 ```
+
 Get your key at: https://console.anthropic.com → API Keys
 
 ### 3. Start
@@ -40,11 +42,11 @@ http://localhost:8000
 
 ## Accounts
 
-| Login  | Password | Role          | Access                        |
-|--------|----------|---------------|-------------------------------|
-| admin  | admin123 | Administrator | All tasks, all users          |
-| alice  | alice123 | User          | Own tasks only                |
-| bob    | bob123   | User          | Own tasks only                |
+| Login | Password | Role          | Access               |
+| ----- | -------- | ------------- | -------------------- |
+| admin | admin123 | Administrator | All tasks, all users |
+| alice | alice123 | User          | Own tasks only       |
+| bob   | bob123   | User          | Own tasks only       |
 
 ---
 
@@ -77,12 +79,15 @@ browser-agent/
 ## Troubleshooting
 
 ### `npm` fails with "execution policy" error
+
 Use **cmd.exe** instead of PowerShell, or run in PowerShell as admin:
+
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 ### `MCP connection failed`
+
 ```cmd
 node --version          # must be 18+
 npm install -g @modelcontextprotocol/server-puppeteer
@@ -90,12 +95,15 @@ npx puppeteer browsers install chrome
 ```
 
 ### Port 8000 already in use
+
 ```cmd
 uvicorn server:app --port 8001
 ```
+
 Then open http://localhost:8001
 
 ### `ANTHROPIC_API_KEY not found`
+
 Make sure the `.env` file exists in the project root and contains the correct key.
 
 ---
@@ -111,3 +119,5 @@ Make sure the `.env` file exists in the project root and contains the correct ke
    - Repeats until task is complete (max 20 steps)
 4. Each step is streamed via WebSocket in real time
 5. Result is saved to DB and visible in task history
+
+# browser_agent
